@@ -1,21 +1,62 @@
-# Sentient Memory Card Game 🎮
+# Sentient Memory Card Game
 
-A beautiful, interactive memory card game built with React and Framer Motion, featuring a quiz system based on Sentient knowledge.
+An interactive memory matching game featuring progressive difficulty levels and a Sentient knowledge quiz system. Built with modern web technologies and smooth animations.
 
-## Features
+## Overview
 
-✨ **Beautiful Pink Theme** - Stunning gradient backgrounds and smooth animations
-🎴 **Card Flip Game** - Match 8 pairs of cards with smooth 3D flip animations
-❤️ **Lives System** - 3 lives per game session
-🎯 **Quiz Challenge** - Answer 3 random Sentient questions correctly to earn another try
-🔊 **Sound Effects** - Interactive audio feedback for flips, matches, and wins
-📱 **Responsive** - Works great on desktop and mobile
+The Sentient Memory Card Game is a web-based card matching game that starts easy and progressively increases in difficulty across 5 levels. Players must match pairs of cards featuring Sentient artwork while managing a limited number of lives. When lives run out, players can continue by answering questions about the Sentient ecosystem.
+
+## Game Features
+
+### Progressive Difficulty System
+- **Level 1**: 4 cards (2 pairs) - 2x2 grid
+- **Level 2**: 6 cards (3 pairs) - 3x2 grid
+- **Level 3**: 8 cards (4 pairs) - 4x2 grid
+- **Level 4**: 12 cards (6 pairs) - 4x3 grid
+- **Level 5**: 16 cards (8 pairs) - 4x4 grid
+
+### Core Gameplay
+- Five lives per game session
+- Gain one additional life when advancing to the next level (max 5 lives)
+- Score tracking across all levels
+- 3D card flip animations
+- Real-time sound effects using Web Audio API
+
+### Quiz System
+When players lose all lives, they must answer 3 randomly selected questions about the Sentient ecosystem correctly to continue playing. The quiz covers topics including:
+- Sentient's core purpose and mission
+- The GRID infrastructure
+- Artifacts and architecture
+- Token economy (SENT)
+- Ecosystem roles (Reps, Builders, Stakers, Users)
+
+## Technologies Used
+
+### Frontend Framework
+- **React 18** - Component-based UI library
+- **JSX** - JavaScript XML syntax for component structure
+
+### Animation & UX
+- **Framer Motion** - Production-ready animation library for smooth transitions, card flips, and screen transitions
+- **CSS3** - Custom styling with gradients, transforms, and responsive design
+
+### Build Tools
+- **Vite** - Fast build tool and development server with hot module replacement
+- **npm** - Package management
+
+### Audio
+- **Web Audio API** - Native browser API for generating sound effects (card flips, matches, wrong guesses, level completion)
+- **Background Music** - Procedurally generated chord progressions using oscillators
+
+### Assets
+- Custom Sentient artwork (WebP format)
+- SVG logo
 
 ## Installation
 
 ```bash
 # Navigate to the project directory
-cd /Users/mac/Documents/JOSHUA/sentient-game
+cd sentient-game
 
 # Install dependencies
 npm install
@@ -26,34 +67,66 @@ npm run dev
 
 The game will be available at `http://localhost:5173`
 
-## How to Play
-
-1. Click **Start Game** to begin
-2. Click on cards to flip them and find matching pairs
-3. Match all 8 pairs to win!
-4. If you lose all 3 lives, take the quiz to earn another chance
-5. Answer 3 Sentient questions correctly to continue playing
-
-## Customization
-
-- Replace emoji symbols in `src/components/Game.jsx` with images from `/Users/mac/Downloads/sentient`
-- Modify colors in CSS files
-- Add more questions to `src/data/questions.js`
-- Adjust animations in component files
-
 ## Build for Production
 
 ```bash
+# Create optimized production build
 npm run build
+
+# Preview production build locally
 npm run preview
 ```
 
-## Tech Stack
+## Project Structure
 
-- React 18
-- Framer Motion (animations)
-- Vite (build tool)
-- Web Audio API (sound effects)
+```
+sentient-game/
+├── public/
+│   └── sentient/
+│       ├── logo.jpg
+│       └── [card images]
+├── src/
+│   ├── components/
+│   │   ├── Game.jsx
+│   │   ├── Game.css
+│   │   ├── Quiz.jsx
+│   │   └── Quiz.css
+│   ├── data/
+│   │   └── questions.js
+│   ├── hooks/
+│   │   └── useBackgroundMusic.js
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── package.json
+└── vite.config.js
+```
 
-Enjoy the game! 🎉
+## Development
+
+The game uses React's useState and useEffect hooks for state management. Framer Motion's AnimatePresence handles smooth transitions between game states (start, playing, quiz, game over, victory).
+
+Key components:
+- **App.jsx** - Main game state management and screen routing
+- **Game.jsx** - Core gameplay logic and card grid
+- **Quiz.jsx** - Question display and answer validation
+- **useBackgroundMusic.js** - Custom hook for background audio
+
+## Browser Compatibility
+
+Modern browsers with support for:
+- ES6+ JavaScript
+- Web Audio API
+- CSS Grid
+- CSS Transforms and Transitions
+
+## License
+
+MIT
+
+## Credits
+
+Made with love by [@seyi_dev](https://x.com/seyi_dev)
 
