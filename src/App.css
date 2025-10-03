@@ -1,0 +1,118 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.screen {
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  width: 100%;
+}
+
+.logo-container {
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.start-button {
+  background: white;
+  color: #ff1f8f;
+  border: none;
+  padding: 20px 50px;
+  font-size: 1.5em;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.quiz-button {
+  background: white;
+  color: #ff1f8f;
+  border: none;
+  padding: 18px 45px;
+  font-size: 1.3em;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  padding: 15px 40px;
+  font-size: 1.1em;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.score {
+  font-size: 2em;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.failed-screen h1,
+.won-screen h1 {
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1em;
+  color: white;
+  opacity: 0.9;
+  z-index: 1000;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+

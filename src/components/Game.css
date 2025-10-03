@@ -1,0 +1,140 @@
+.game-container {
+  width: 100%;
+  max-width: 900px;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.label {
+  font-size: 1em;
+  opacity: 0.9;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.value {
+  font-size: 1.8em;
+  font-weight: 800;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 15px;
+  perspective: 1000px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  aspect-ratio: 1;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card.solved {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-front {
+  background: linear-gradient(135deg, #ffffff 0%, #ffe6f5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 31, 143, 0.1) 10px,
+      rgba(255, 31, 143, 0.1) 20px
+    );
+}
+
+.sentient-text {
+  font-size: 4em;
+  font-weight: 900;
+  color: #ff1f8f;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-back {
+  background: linear-gradient(135deg, #ff6ec7 0%, #ff1f8f 100%);
+  transform: rotateY(180deg);
+  padding: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    gap: 10px;
+  }
+  
+  .sentient-text {
+    font-size: 3em;
+  }
+  
+  .card-back {
+    font-size: 3em;
+  }
+}
+
